@@ -2,6 +2,10 @@ const Router = require("express").Router();
 const Workout = require("../models/workout.js");
 const path = require("path");
 
+Router.get("/index", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
+});
+
 Router.get("/exercise", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/exercise.html"));
 });
