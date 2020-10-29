@@ -1,5 +1,14 @@
 const Router = require("express").Router();
 const Workout = require("../models/workout.js");
+const path = require("path");
+
+Router.get("/exercise", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/exercise.html"));
+});
+
+Router.get("/stats", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/stats.html"));
+});
 
 Router.post("/api/workouts", (req, res) => {
   Workout.create({})
